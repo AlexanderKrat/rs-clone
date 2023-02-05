@@ -1,5 +1,5 @@
 {
-  "name": "empty_project",
+  "name": "rs-clone",
   "version": "0.0.0",
   "description": "Empty project template",
   "private": true,
@@ -9,7 +9,7 @@
     "lint": "eslint src",
     "lint:fix": "eslint --fix"
   },
-  "author": "Kris Casper",
+  "author": "github: alexanderkrat, kapkande, Sundozer",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
@@ -20,6 +20,7 @@
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-webpack-plugin": "^2.5.4",
+    "favicons-webpack-plugin": "^6.0.0",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
     "sass": "^1.32.12",
