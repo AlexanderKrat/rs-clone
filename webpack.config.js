@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const devServer = (isDev) => !isDev ? {} : {
   devServer: {
     open: true,
@@ -55,6 +55,7 @@ module.exports = ({ development }) => ({
     ...esLintPlugin(development),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new FaviconsWebpackPlugin('./src/assets/images/site-icon.png'),
     new CopyPlugin({
       patterns: [{
         from: 'public',
