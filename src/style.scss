@@ -1,10 +1,128 @@
-body {
-  min-height: 100vh;
+html{
+  width: 100%;
+  height: 100%;
+}
+body{
+  width: 100%;
+  height: 100%;
+}
+main{
+  padding-top: 7rem;
+  width: 100%;
+  height: 100%;
+}
+.main__container{
+  width: 100%;
+  height: 100%;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  flex: 1 0 auto;
+}
+body {
   background-color: darkslategrey;
-  color: white;
-  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.header__container{
+  width: 100%;
+  height: 7rem;
+  background: black;
+  position: fixed;
+  top: 0pxs;
+}
+.footer__container{
+  height: 7rem;
+  background: rgb(0, 0, 0);
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.foooter__info-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin:  0;
+  width: 100%;
+}
+.footer__item{
+  text-decoration: none;
+  justify-content: center;
+  display: flex;
+  width: 33%;
+  height: 100%;
+  align-items: center;
+}
+.item__image{
+  margin-right: 5px;
+  height: 50px;
+  width:  50px;
+  background: url('./assets/images/github.png') no-repeat top 0px left 0px;
+  background-size: 100%;
+  border-radius: 5%;
+}
+.footer__link{
+  color: orange;
+  font-weight:500;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  &:hover{
+    cursor: pointer;
+    color: rgb(252, 193, 92);
+  }
+}
+.main__button{
+  font-size: 150%;
+  font-weight: bold;
+  width: 15%;
+  height: 5%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.game-container{
+  width: 80%;
+  height: 30%;
+  margin: 0 auto;
+  background-color: white;
+  margin-bottom: 10px;
+  border: black 3px solid;
+  display: flex;
+  justify-content: space-between;
+}
+.game-container__image{
+  background-color: red;
+  width: 40%;
+  height: 100%;
+  background: url('./assets/images/site-icon.png') no-repeat;
+}
+.game-container__block{
+  width: 55%;
+  height: 100%;
+}
+.game-container__title{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 250%;
+  margin-bottom: 5%;
+}
+.game-container__description{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100%;
 }
