@@ -1,0 +1,46 @@
+.matchUp {
+    max-width: 50%;
+    margin: 1% auto 5% auto;
+    &__form {}
+    &__subtitle {
+        display: inline-block;
+    }
+    &__title {
+        width: 100%;
+        text-align: center;
+    }
+    &__item,
+    &__subtitle {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        div {
+            text-align: center;
+            font-size: 18px;
+            color: white;
+        }
+    }
+    &__subtitle {
+        justify-content: space-evenly;
+    }
+    &__number {
+        width: 20px;
+    }
+    &__input-delete {
+        height: 24px;
+        width: 24px;
+        background: url('../icons/close.svg');
+        border: none;
+        background-position: center;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    &__input-delete:hover {
+        background-color: red;
+    }
+    &__input-definitio,
+    &__input-keyword {
+        height: 24px;
+    }
+}

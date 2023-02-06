@@ -1,5 +1,5 @@
-import './normalize.css'
-import './style.scss';
+import './assets/styles/index.scss';
+import createMainGame from "./assets/components/matchUp/createGame";
 const main = document.querySelector('.main__container');
 const addGame = document.querySelector('.main__button');
 addGame?.addEventListener('click', ()=>{
@@ -19,3 +19,5 @@ let Data:{gameName:string;description:string} = {
   root.innerHTML = html;
   main?.appendChild(root);
 })
+
+
