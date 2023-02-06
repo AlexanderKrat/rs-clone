@@ -1,5 +1,6 @@
 import createLine from './createLine';
 
+
 function createMainGame() {
     let blockMatchUp = document.createElement('div');
     blockMatchUp.classList.add('matchUp');
@@ -11,18 +12,25 @@ function createMainGame() {
     //form
     let form = document.createElement('form');
     form.classList.add('matchUp__form');
+    form.setAttribute('onSubmit', 'return false')
+
+    let subtitle = document.createElement('span');
+    subtitle.classList.add('matchUp__subtitle');
 
     let keyword = document.createElement('div');
-    keyword.classList.add('matchUp__subtitle');
     keyword.textContent = 'keyword';
-    form.appendChild(keyword);
+    subtitle.appendChild(keyword);
 
     let definitio = document.createElement('div');
-    definitio.classList.add('matchUp__subtitle');
     definitio.textContent = 'definitio';
-    form.appendChild(definitio);
+    subtitle.appendChild(definitio);
+
+
+    form.appendChild(subtitle);
+
+
     blockMatchUp.appendChild(form);
-   
+
     let createLineBtm = document.createElement('button');
     createLineBtm.classList.add('matchUp__create-line');
     createLineBtm.textContent = 'add';
@@ -35,6 +43,6 @@ function createMainGame() {
     createLine();
     createLine();
     createLine();
-}
+  }
 
 export default createMainGame
