@@ -1,5 +1,5 @@
-import './normalize.css'
-import './style.scss';
+import './assets/styles/index.scss';
+
 const main = document.querySelector('.main__container');
 const addGame = document.querySelector('.main__button');
 addGame?.addEventListener('click', ()=>{
