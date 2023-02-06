@@ -20,4 +20,4 @@ let Data:{gameName:string;description:string} = {
   main?.appendChild(root);
 })
 
-createMainGame()
+
