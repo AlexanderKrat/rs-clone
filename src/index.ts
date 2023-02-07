@@ -21,3 +21,4 @@ let Data:{gameName:string;description:string} = {
 })
 
 
+createMainGame();
