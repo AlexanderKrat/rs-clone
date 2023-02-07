@@ -1,7 +1,14 @@
 import './normalize.css'
 import './style.scss';
+import './paper.scss';
+import { Sticks } from './paper'
 const main = document.querySelector('.main__container');
 const addGame = document.querySelector('.main__button');
+const sticks = document.querySelector('.sticks')
+sticks?.addEventListener('click', () => {
+  const newSticks = new Sticks();
+  newSticks.create()
+})
 addGame?.addEventListener('click', ()=>{
   console.log(main)
 let Data:{gameName:string;description:string} = {
