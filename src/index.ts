@@ -4,10 +4,14 @@ import './paper.scss';
 import { Sticks } from './paper'
 const main = document.querySelector('.main__container');
 const addGame = document.querySelector('.main__button');
-const sticks = document.querySelector('.sticks')
-sticks?.addEventListener('click', () => {
+const sticks = document.querySelector('.sticks') as HTMLElement
+sticks!.addEventListener('click', () => {
+  const addButton = addGame as HTMLButtonElement;
+  sticks.style.display = 'none'
+  addButton.style.display = 'none'
   const newSticks = new Sticks();
   newSticks.create()
+  newSticks.check()
 })
 addGame?.addEventListener('click', ()=>{
   console.log(main)
