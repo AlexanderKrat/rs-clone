@@ -4,7 +4,7 @@ import openSection from "./openSection";
 
 
 const render: any = (path: any) => {
-    if (path == "#/") {
+    if (path == "#/" || path == "") {
         openSection('')
     } else if (path == "#/addGame") {
         openSection('selectionBlock');
