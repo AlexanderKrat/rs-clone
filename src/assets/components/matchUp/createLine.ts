@@ -1,7 +1,6 @@
 import setOrder from './setOrder';
 import deleteInputLine from './deleteInputLine';
 
-
 function createLine() {
   const arrayNumbers: NodeListOf<Element> = document.querySelectorAll('.matchUp__number')
 

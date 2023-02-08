@@ -1,8 +1,13 @@
+@import "normalize";
 @import "footer";
 @import "header";
 @import "main";
 @import "matchUpBlock";
-@import "normalize";
+@import "selectionBlock";
+
+
+
+
 html {
     width: 100%;
     height: 100%;
@@ -14,4 +19,8 @@ body {
     background-color: darkslategrey;
     display: flex;
     flex-direction: column;
+}
+
+.hidden {
+    display: none;
 }

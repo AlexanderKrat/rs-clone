@@ -6,6 +6,8 @@ function submitMatchUpForm(e: Event) {
     const matchUpTitle: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp__title');
     const inputKeyword: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp__input-keyword');
     const inputDefinitio: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp__input-definitio');
+    const matchUp = document.querySelector('.matchUp');
+   
     let allInputs: Element[] = [...matchUpTitle, ...inputKeyword, ...inputDefinitio];
     let flag: boolean = false;
 
@@ -30,7 +32,14 @@ function submitMatchUpForm(e: Event) {
         return array
     }
 
-    const URL =  criateURL(data)
-    openMatchUpGame(URL)
+    const URL =  criateURL(data);
+     openMatchUpGame(URL);
+     matchUp?.remove();
+        // allInputs.forEach(element => {
+        //     if (!(element instanceof HTMLInputElement)) { return };
+        //     element!.value = ''
+        // });   
+ 
+   
 }
 export default submitMatchUpForm

@@ -1,12 +1,11 @@
 import createLine from './createLine';
 import submitMatchUpForm from './submitMatchUpForm';
 
-
-function createMainGame() {
+function createBaseMathUp() {
   let blockMatchUp = document.createElement('form');
   blockMatchUp.classList.add('matchUp');
   blockMatchUp.setAttribute('onSubmit', 'return false')
-  //title input
+ 
   let titleMatchUp = document.createElement('input');
   titleMatchUp.value = 'Match Up'
   titleMatchUp.classList.add('matchUp__title');
@@ -27,9 +26,7 @@ function createMainGame() {
   definitio.textContent = 'definitio';
   subtitle.appendChild(definitio);
 
-
   block.appendChild(subtitle);
-
 
   blockMatchUp.appendChild(block);
 
@@ -40,7 +37,6 @@ function createMainGame() {
   createLineBtm.addEventListener('click', createLine);
   blockMatchUp.appendChild(createLineBtm);
 
-
   let submit = document.createElement('button');
   submit.classList.add('matchUp__submit');
   submit.textContent = 'submit';
@@ -48,11 +44,11 @@ function createMainGame() {
   blockMatchUp.appendChild(submit);
 
   const main = document.querySelector('.main');
-  console.log(main);
+
   main?.appendChild(blockMatchUp);
   createLine();
-  // createLine();
-  // createLine();
+  createLine();
+  createLine();
 }
 
-export default createMainGame
+export default createBaseMathUp
