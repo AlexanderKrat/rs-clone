@@ -49,6 +49,8 @@ export class Sticks {
     }
     check() {
         const sticksGame = document.querySelector('.sticks-place') as HTMLElement;
+        const numberOfSticks = this.verbs?.length;
+        let winCond = 0;
         let clicked: HTMLElement[] = [];
         sticksGame.addEventListener('click', (e) => {
             const block = e.target as HTMLElement;
@@ -57,6 +59,11 @@ export class Sticks {
                     const finded = verbs.find(element => clicked[0].innerHTML === element[0] || clicked[0].innerHTML === element[1])
                     if (finded![1] === clicked[1].innerHTML && finded![0] === clicked[0].innerHTML || finded![0] === clicked[1].innerHTML && finded![1] === clicked[0].innerHTML) {
                         clicked = []
+                        winCond++;
+                        console.log(winCond, numberOfSticks)
+                        if (winCond === numberOfSticks) {
+                            alert('win!')
+                        }
                     } else {
                         clicked.forEach(el => {
                             el.style.opacity = '0'
@@ -67,6 +74,22 @@ export class Sticks {
                 block.style.opacity = '1'
                 clicked.push(block)
             }
+            
+            
         })
     }
+    randomizer() {
+        const arraOfSticks: Element[] = []
+        const stickers = document.querySelectorAll('.one-of-sticks')
+        stickers.forEach((el) => {
+            arraOfSticks.push(el)
+        })
+        const shuffledArray = arraOfSticks.sort((a, b) => 0.5 - Math.random());
+        const sticksGame = document.querySelector('.sticks-place') as HTMLElement;
+        sticksGame.innerHTML = '';
+        shuffledArray.forEach((ele) => {
+            sticksGame.appendChild(ele)
+        })
+    }
+    
 }
