@@ -1,0 +1,31 @@
+.sticks {
+    margin-top: 20px;
+    width: 50%;
+    height: 100px;
+    font-size: 50px;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(224, 167, 247);
+}
+.sticks-place {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.one-of-sticks {
+    width: 200px;
+    height: 200px;
+    background-image: url('./assets/images/paper.png');
+    background-size:contain;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.sticksText {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 28px;
+    color: rgb(0, 0, 0);
+}
