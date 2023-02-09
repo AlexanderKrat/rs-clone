@@ -1,7 +1,7 @@
 import { cli } from "webpack";
 
 const verbs = [
-    ['Look forward to', 'С нетерпением ждать чего-то'],
+    ['Look forward to', 'C нетерпением ждать чего-то'],
     ['Carry on', 'Продолжать заниматься чем-то'],
     ['Pass out', 'Терять сознание'],
     ['Run out', 'Закончиться'],
@@ -23,7 +23,7 @@ export class Sticks {
         }
     }
     create() {
-        const main = document.querySelector('.main__container') as HTMLElement;
+        const main = document.querySelector('.main') as HTMLElement;
         const sticksGame = document.createElement('div')
         sticksGame.classList.add('sticks-place')
         main.appendChild(sticksGame)
