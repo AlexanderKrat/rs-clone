@@ -1,5 +1,6 @@
 import criateURL from "./criateURL";
 import dataGame from "./data/dataGame";
+import dragDrop from "./matchUp/drop";
 import openMatchUpGame from "./matchUp/openMatchUpGame";
 import openSection from "./openSection";
 
@@ -20,6 +21,7 @@ function createCell(obj:dataGame) {
       <div class="game-container__description">${obj.title}</div>
    `;
     main?.appendChild(root);
+    
 }
 export default createCell
 function createCellListener(obj:dataGame, element:HTMLElement) {
@@ -27,6 +29,7 @@ function createCellListener(obj:dataGame, element:HTMLElement) {
     if(obj.nameGame == 'machUp'){
       openSection('matchUp-game');
       openMatchUpGame(criateURL(obj));
+      dragDrop()
     }
   })
 }

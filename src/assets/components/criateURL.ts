@@ -7,7 +7,7 @@ function criateURL(date:dataGame) {
         params.append(key, `${val}`);
     }
     const query = String(params);
-   
+    
     return query;
   
 }

@@ -44,7 +44,10 @@ function createBlockMatchUp(keyword:string, definitio:string) {
   item.innerHTML =
     `  
   <div class="matchUp-game__number"></div>
-  <div class="matchUp-game__keyword">${keyword}</div>
+  <div class="matchUp-game__keyword box">
+    <div class="matchUp-game__drop">${keyword}</div>
+  </div>
+  <div class="matchUp-game__empty box"></div>
   <div class="matchUp-game__definitio">${definitio}</div>
 `
   matchUpForm?.appendChild(item)
