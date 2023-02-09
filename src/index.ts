@@ -1,7 +1,19 @@
 import './assets/styles/index.scss';
+import { Sticks } from './assets/components/sticks/paper'
+import './paper.scss'
 import createMainGame from "./assets/components/matchUp/createGame";
 const main = document.querySelector('.main__container');
 const addGame = document.querySelector('.main__button');
+const sticks = document.querySelector('.sticks') as HTMLElement
+sticks!.addEventListener('click', () => {
+  const addButton = addGame as HTMLButtonElement;
+  sticks.style.display = 'none'
+  addButton.style.display = 'none'
+  const newSticks = new Sticks();
+  newSticks.create()
+  newSticks.check()
+  newSticks.randomizer()
+})
 addGame?.addEventListener('click', ()=>{
   console.log(main)
 let Data:{gameName:string;description:string} = {
