@@ -1,3 +1,4 @@
+import createCell from '../createCell';
 import criateURL from '../criateURL'
 import dataGame from '../data/dataGame';
 import openMatchUpGame from './openMatchUpGame';
@@ -19,27 +20,23 @@ function submitMatchUpForm(e: Event) {
 
     const data: dataGame = {
         nameGame: 'machUp',
-        title: matchUpTitle[0].value,
+        title: matchUpTitle[0].value.replace(/\s/g, '%20'),
         arr: setArray(),
     }
-
+   
     function setArray() {
         let array: String[][] = [];
         inputKeyword.forEach((element, index) => {
             if (!(element instanceof HTMLInputElement)) { return };
             array.push([element.value, inputDefinitio[index].value])
         });
-        return array
+        return array;
     }
-
+       
     const URL =  criateURL(data);
-     openMatchUpGame(URL);
-     matchUp?.remove();
-        // allInputs.forEach(element => {
-        //     if (!(element instanceof HTMLInputElement)) { return };
-        //     element!.value = ''
-        // });   
- 
-   
+    
+    openMatchUpGame(URL);
+    matchUp?.remove();
+    createCell(data);
 }
 export default submitMatchUpForm

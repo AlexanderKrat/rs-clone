@@ -3,6 +3,7 @@ function createObgectFromString(params:string) {
         (key, value) => {
             return key === "" ? value : decodeURIComponent(value)
         })
+        
     return obj
 }
 
