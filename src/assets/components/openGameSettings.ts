@@ -1,5 +1,6 @@
 import createBaseMathUp from "./matchUp/createBaseMathUp";
 import openSection from "./openSection";
+import { Sticks } from "./sticks/paper";
 
 function openGameSettings(e:Event) {
     const target = e.target;
@@ -13,6 +14,14 @@ function openGameSettings(e:Event) {
     }
     if (target.classList.contains('wordMagnets')){
         
+    }
+    if (target.classList.contains('sticks-button')){
+        document.querySelector('.sticks-place')?.remove()
+        const newSticks = new Sticks();
+        newSticks.create();
+        newSticks.check();
+        newSticks.randomizer();
+        openSection('sticks-place')
     }
 }
 export default openGameSettings

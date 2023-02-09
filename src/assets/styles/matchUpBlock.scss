@@ -1,8 +1,7 @@
 .matchUp {
     max-width: 50%;
     margin: 1% auto 5% auto;
-    &__form {}
-    &__subtitle {
+   &__subtitle {
         display: inline-block;
     }
     &__title {
@@ -41,6 +40,69 @@
     }
     &__input-definitio,
     &__input-keyword,
+    &__title {
+        height: 24px;
+        width: 200px;
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+        padding: 1px 2px;
+        border-width: 2px;
+        border-style: inset;
+        border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+        background-color: white;
+        color: black;
+    }
+    &__title{
+        width: 100%;
+    }
+    &__subtitle{
+        color: white;
+    }
+}
+.matchUp-game {
+    max-width: 50%;
+    margin: 1% auto 5% auto;
+   &__subtitle {
+        display: inline-block;
+    }
+    &__title {
+        width: 100%;
+        text-align: center;
+    }
+    &__item,
+    &__subtitle {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        div {
+            text-align: center;
+            font-size: 18px;
+        }
+    }
+    &__subtitle {
+        justify-content: space-evenly;
+    }
+    &__number {
+        width: 20px;
+        color: white;
+    }
+    &__input-delete {
+        height: 24px;
+        width: 24px;
+        background: url('../icons/close.svg');
+        border: none;
+        background-position: center;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    &__input-delete:hover {
+        background-color: red;
+    }
+    &__definitio,
+    &__keyword,
     &__title {
         height: 24px;
         width: 200px;

@@ -1,7 +1,4 @@
-import createGameSelectionBlock from "./createGameSelectionBlock";
-import createBaseMathUp from "./matchUp/createBaseMathUp";
 import openSection from "./openSection";
-
 
 const render: any = (path: any) => {
     if (path == "#/" || path == "") {

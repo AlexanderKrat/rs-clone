@@ -1,6 +1,6 @@
 function openSection(nameElement:string) {
     const matchUpGame = document.querySelector('.matchUp-game')
-
+    
     const main = document.querySelector('.main')
     if (!nameElement){nameElement = 'main__container'}
     if(nameElement=='main__container'){matchUpGame?.remove()}
