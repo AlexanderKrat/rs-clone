@@ -1,5 +1,3 @@
-import { cli } from "webpack";
-
 const verbs = [
     ['Look forward to', 'С нетерпением ждать чего-то'],
     ['Carry on', 'Продолжать заниматься чем-то'],
@@ -91,5 +89,6 @@ export class Sticks {
             sticksGame.appendChild(ele)
         })
     }
+    
     
 }
