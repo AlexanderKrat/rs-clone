@@ -52,7 +52,7 @@ export class Sticks {
             answer.innerHTML = elem[1]
             div.appendChild(question)
             answerDiv.appendChild(answer)
-            answer.style.color = 'red'
+            answer.style.color = 'brown'
             answer.style.opacity = '0'
             question.style.opacity = '0'
         })
@@ -64,6 +64,12 @@ export class Sticks {
         let clicked: HTMLElement[] = [];
         let countClicks = 1;
         sticksGame.addEventListener('click', (e) => {
+
+            const loseAud = require('../../sounds/24.mp3')
+            const winAud = require('../../sounds/win.mp3')
+            const winAudio = new Audio(winAud)
+            const loseAudio = new Audio(loseAud)
+
             const block = e.target as HTMLElement;
             if (block.className === 'sticksText' && block.style.opacity === '0') {
               this.startTime(countClicks)
@@ -79,6 +85,7 @@ export class Sticks {
                               el.classList.remove('win-anim')
                             }, 1500);
                         })
+                        winAudio.play()
                         clicked = []
                         winCond++;
                         if (winCond === numberOfSticks) {
@@ -92,6 +99,7 @@ export class Sticks {
                               el.classList.remove('stickers-anim')
                             }, 1500);
                         })
+                        loseAudio.play()
                         clicked = []
                     }
                 }
