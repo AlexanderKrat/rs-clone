@@ -1,4 +1,5 @@
 import createBaseMathUp from "./matchUp/createBaseMathUp";
+import formForSticks from './sticks/formForSticks'
 import openSection from "./openSection";
 import { Sticks } from "./sticks/paper";
 
@@ -18,10 +19,16 @@ function openGameSettings(e:Event) {
     if (target.classList.contains('sticks-button')){
         document.querySelector('.sticks-place')?.remove()
         const newSticks = new Sticks();
-        newSticks.create();
-        newSticks.check();
-        newSticks.randomizer();
-        openSection('sticks-place')
+        formForSticks()
+
+
+        // newSticks.create();
+        // newSticks.check();
+        // newSticks.randomizer();
+
+        // openSection('sticks-place')
+
+        openSection('sticks-form')
     }
 }
 export default openGameSettings
