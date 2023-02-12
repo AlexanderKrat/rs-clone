@@ -15,16 +15,11 @@ export class Sticks {
     verbs: string[][] | undefined;
     name: string | undefined;
     title: string | undefined;
-    constructor(obj?: string[][], name?: string, title?: string) {
+    constructor(obj?: string[][], title?: string) {
         if (obj) {
             this.verbs = obj;
         } else {
             this.verbs = verbs;
-        }
-        if (name) {
-            this.name = name;
-        } else {
-            this.name = 'Stickers';
         }
         if (title) {
             this.title = title;
@@ -77,7 +72,7 @@ export class Sticks {
               block.style.opacity = '1'
               clicked.push(block)
                 if (clicked.length > 1) {
-                    const finded = verbs.find(element => clicked[0].innerHTML === element[0] || clicked[0].innerHTML === element[1])
+                    const finded = this.verbs!.find(element => clicked[0].innerHTML === element[0] || clicked[0].innerHTML === element[1])
                     if (finded![1] === clicked[1].innerHTML && finded![0] === clicked[0].innerHTML || finded![0] === clicked[1].innerHTML && finded![1] === clicked[0].innerHTML) {
                         clicked.forEach(el => {
                             el.classList.add('win-anim')

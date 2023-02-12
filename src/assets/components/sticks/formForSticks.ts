@@ -1,4 +1,5 @@
 import createLineForm from './createLineForm'
+import createSticks from './createObjectSticks'
 
 function formForSticks () {
     const main = document.querySelector('.main')
@@ -47,5 +48,6 @@ function formForSticks () {
     createLineForm()
 
     addButton.addEventListener('click', createLineForm)
+    subButton.addEventListener('click', createSticks)
 }
 export default formForSticks;
