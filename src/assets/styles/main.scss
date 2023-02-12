@@ -64,11 +64,21 @@ main {
     justify-content: center;
     font-size: 100%;
 }
-.logo{
+
+.logo {
     width: 200px;
     height: 50px;
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
     background-image: url('https://az779572.vo.msecnd.net/res/content/images/global/logo-large.png|1bqpxglqwvexwcf9huxjhhg2.png');
+}
+
+.game-container__share {
+    background-image: url('../icons/share.svg');
+    height: 90px;
+    width: 50px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
