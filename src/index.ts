@@ -1,11 +1,10 @@
 import './assets/styles/index.scss';
-import { Sticks } from './assets/components/sticks/paper'
 import './assets/styles/index.scss';
 import createGameSelectionBlock from './assets/components/createGameSelectionBlock';
 import render from './assets/components/router';
 import createCell from './assets/components/createCell';
 
-const game = `nameGame=machUp&title=Match%20Up&arr=asd%2Casd%2Casd%2Cddd%2Caaaa%2Cgggg`
+const game = `nameGame=machUp&title=Match%2520Up&arr=11%2C1%2C12%2C2%2C13%2C3`
 createCell(game)
 
 createGameSelectionBlock()
