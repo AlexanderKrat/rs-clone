@@ -1,5 +1,4 @@
 import './assets/styles/index.scss';
-import { Sticks } from './assets/components/sticks/paper'
 import './assets/styles/index.scss';
 import createGameSelectionBlock from './assets/components/createGameSelectionBlock';
 import render from './assets/components/router';

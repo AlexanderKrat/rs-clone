@@ -17,7 +17,7 @@
     height: 200px;
     background-image: url('../images/paper.png');
     background-size:contain;
-    margin-top: 20px;
+    margin: 10px;
     cursor: pointer;
 }
 .sticksText {
@@ -28,4 +28,79 @@
     text-align: center;
     font-size: 28px;
     color: rgb(0, 0, 0);
+}
+.stickers-anim {
+    animation: 1.5s;
+    animation-name: stick-animation;
+    box-sizing: border-box;
+}
+
+@keyframes stick-animation {
+    0% {
+        border: 3px solid white
+    }
+    25% {
+        border: 3px solid red
+    }
+    50% {
+        border: 3px solid white
+    }
+    75% {
+        border: 3px solid red
+    }
+}
+.win-anim {
+    animation: 1.5s;
+    animation-name: win-animation;
+    box-sizing: border-box;
+}
+
+@keyframes win-animation {
+    0% {
+        border: 3px solid green
+    }
+    33% {
+        border: 3px solid white;
+    }
+    66% {
+        border: 3px solid green
+    }
+}
+.stats-sticks {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+    color: white;
+}
+
+.input-name-sticks {
+    width: 50%;
+    position: relative;
+    left: 25%;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 25px;
+}
+.input__question__sticks {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+.sticks-form-line {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.input-in-form {
+    width: 25%;
+}
+.stick-form-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+
+}
+.sticks-form-button {
+    font-size: 26px;
 }
