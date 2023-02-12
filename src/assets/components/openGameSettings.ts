@@ -18,14 +18,6 @@ function openGameSettings(e:Event) {
     if (target.classList.contains('sticks-button')){
         document.querySelector('.sticks-place')?.remove()
         formForSticks()
-
-
-        // newSticks.create();
-        // newSticks.check();
-        // newSticks.randomizer();
-
-        // openSection('sticks-place')
-
         openSection('sticks-form')
     }
 }

@@ -15,7 +15,9 @@ function createSticks() {
         arr.push(insideArr)
     })
     
-    const newSticks = new Sticks(arr, 'Sticks')
+    const title = document.querySelector('.input-name-sticks') as HTMLInputElement
+
+    const newSticks = new Sticks(arr, title.value)
     newSticks.create();
     newSticks.check();
     newSticks.randomizer();
