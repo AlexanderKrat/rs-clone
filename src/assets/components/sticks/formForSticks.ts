@@ -3,7 +3,8 @@ import createSticks from './createObjectSticks'
 
 function formForSticks () {
     const main = document.querySelector('.main')
-    const divForm = document.createElement('div')
+    if (!document.querySelector('.sticks-form')) {
+        const divForm = document.createElement('div')
     divForm.classList.add('sticks-form')
     const form = document.createElement('div')
     form.classList.add('sticks-form-main')
@@ -49,5 +50,6 @@ function formForSticks () {
 
     addButton.addEventListener('click', createLineForm)
     subButton.addEventListener('click', createSticks)
+    }
 }
 export default formForSticks;
