@@ -6,7 +6,6 @@ function criateURL(date:dataGame) {
         params.append(key, `${val}`.replace(/\s/g, '%20'));
     }
     const query = String(params);
-    console.log(query);
     return query;
 
 }

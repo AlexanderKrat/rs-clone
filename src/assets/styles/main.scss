@@ -81,4 +81,19 @@ main {
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
+    transition: all 0,5s;
+}
+.popup-copy{
+    position: absolute;
+    color: rgb(45, 37, 53);
+    font-size: 18px;
+    background-color: aqua;
+    border-radius: 5px;
+    border: 2px solid rgb(26, 26, 22);
+    padding: 1px 10px;
+    transition: all 0.5s;
+    margin: 0 47%;
+    text-align: center;
+    width: 150px;
+
 }

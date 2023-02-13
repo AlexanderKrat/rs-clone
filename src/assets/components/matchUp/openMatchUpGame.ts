@@ -5,7 +5,8 @@ import setOrder from "./setOrder";
 import startStopGame from "./startStopGame";
 
 function openMatchUpGame(URL: string) {
-  const object = createObgectFromString(URL)
+  document.querySelector('.matchUp-game')?.remove();
+  const object = createObgectFromString(URL);
   createMainMatchUp(object)
 
   const array = object.arr.split(',')
