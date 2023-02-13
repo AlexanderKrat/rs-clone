@@ -65,11 +65,36 @@ main {
     justify-content: center;
     font-size: 100%;
 }
-.logo{
+
+.logo {
     width: 200px;
     height: 50px;
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
     background-image: url('https://az779572.vo.msecnd.net/res/content/images/global/logo-large.png|1bqpxglqwvexwcf9huxjhhg2.png');
+}
+
+.game-container__share {
+    background-image: url('../icons/share.svg');
+    height: 90px;
+    width: 50px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 0,5s;
+}
+.popup-copy{
+    position: absolute;
+    color: rgb(45, 37, 53);
+    font-size: 18px;
+    background-color: aqua;
+    border-radius: 5px;
+    border: 2px solid rgb(26, 26, 22);
+    padding: 1px 10px;
+    transition: all 0.5s;
+    margin: 0 47%;
+    text-align: center;
+    width: 150px;
+
 }

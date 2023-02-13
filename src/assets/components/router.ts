@@ -1,3 +1,4 @@
+import openMatchUpGame from "./matchUp/openMatchUpGame";
 import openSection from "./openSection";
 
 const render: any = (path: any) => {
@@ -5,7 +6,11 @@ const render: any = (path: any) => {
         openSection('')
     } else if (path == "#/addGame") {
         openSection('selectionBlock');
-    } else {
+    }else if (path.split('=')[0]== "#/nameGame"){
+        openMatchUpGame(path);
+        openSection('matchUp-game')
+        console.log(1);
+    }else {
         document.querySelector(".main")!.innerHTML = `<h1>404</h1>`;
     }
 

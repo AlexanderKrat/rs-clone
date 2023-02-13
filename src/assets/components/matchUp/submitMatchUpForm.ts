@@ -3,7 +3,7 @@ import criateURL from '../criateURL'
 import dataGame from '../data/dataGame';
 import openMatchUpGame from './openMatchUpGame';
 
-function submitMatchUpForm(e: Event) {
+function submitMatchUpForm() {
     const matchUpTitle: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp__title');
     const inputKeyword: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp__input-keyword');
     const inputDefinitio: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp__input-definitio');
@@ -20,7 +20,7 @@ function submitMatchUpForm(e: Event) {
 
     const data: dataGame = {
         nameGame: 'machUp',
-        title: matchUpTitle[0].value.replace(/\s/g, '%20'),
+        title: matchUpTitle[0].value,
         arr: setArray(),
     }
    
@@ -37,6 +37,6 @@ function submitMatchUpForm(e: Event) {
     
     openMatchUpGame(URL);
     matchUp?.remove();
-    createCell(data);
+    createCell(URL);
 }
 export default submitMatchUpForm
