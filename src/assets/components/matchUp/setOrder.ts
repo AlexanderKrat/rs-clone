@@ -1,5 +1,5 @@
-function setOrder() {
-  const arrayNumbers: NodeListOf<Element> = document.querySelectorAll('.matchUp__number')
+function setOrder(element:string) {
+  const arrayNumbers: NodeListOf<Element> = document.querySelectorAll(element)
   arrayNumbers.forEach((element, index) => {
     element.textContent = `${index + 1}`
   });

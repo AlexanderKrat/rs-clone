@@ -4,10 +4,10 @@ import dataGame from '../data/dataGame';
 import openMatchUpGame from './openMatchUpGame';
 
 function submitMatchUpForm() {
-    const matchUpTitle: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp__title');
-    const inputKeyword: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp__input-keyword');
-    const inputDefinitio: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp__input-definitio');
-    const matchUp = document.querySelector('.matchUp');
+    const matchUpTitle: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp-form__title');
+    const inputKeyword: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp-form__input-keyword');
+    const inputDefinitio: NodeListOf<HTMLInputElement> = document.querySelectorAll('.matchUp-form__input-definitio');
+    const matchUp = document.querySelector('.matchUp-form');
    
     let allInputs: Element[] = [...matchUpTitle, ...inputKeyword, ...inputDefinitio];
     let flag: boolean = false;

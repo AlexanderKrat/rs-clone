@@ -1,6 +1,4 @@
 import createObgectFromString from "./createObgectFromString";
-import criateURL from "./criateURL";
-import dataGame from "./data/dataGame";
 import openMatchUpGame from "./matchUp/openMatchUpGame";
 import openSection from "./openSection";
 import shareGame from "./shareGame";
@@ -9,9 +7,8 @@ function createCell(URL: string) {
   const obj = createObgectFromString(URL);
   const main = document.querySelector('.main__container');
   const root = document.createElement('div');
-  // root!.id = obj.title
-
-  createCellListener(obj, root)
+  
+  createCellListener(URL, root)
   root.classList.add('game-container')
   root.classList.add(obj.title)
   root.innerHTML = `
@@ -28,17 +25,20 @@ function createCell(URL: string) {
   shareGame(URL, share)
 }
 export default createCell
-function createCellListener(obj: dataGame, element: HTMLElement) {
+
+function createCellListener(url: string, element: HTMLElement) {
   element.addEventListener('click', (e) => {
     const currentTarget = e.currentTarget;
     const target = e.target
     if (!(target instanceof HTMLElement)) { return };
     if (target.classList.contains('game-container__share')) { return }
-    
+    const path  = new URL(window.location.href).href;
+
     if (!(currentTarget instanceof HTMLElement)) { return };
     if (currentTarget.classList.contains('Match%20Up')) {
       openSection('matchUp-game');
-      openMatchUpGame(criateURL(obj));
+      openMatchUpGame(url);
     }
+    window.history.pushState({ path }, path, path + url);
   })
 }
