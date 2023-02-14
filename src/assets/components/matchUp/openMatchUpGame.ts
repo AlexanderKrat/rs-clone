@@ -13,7 +13,7 @@ function openMatchUpGame(URL: string) {
   for (let i = 0; i < array.length; i++) {
     createBlockMatchUp(array[i], array[++i], i)
   }
-  setOrder()
+  setOrder('.matchUp-game__number')
   dragDrop()
 
 }

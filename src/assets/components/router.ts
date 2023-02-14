@@ -1,17 +1,23 @@
+import createBaseMathUp from "./matchUp/createBaseMathUp";
 import openMatchUpGame from "./matchUp/openMatchUpGame";
 import openSection from "./openSection";
 
 const render: any = (path: any) => {
     if (path == "#/" || path == "") {
-        openSection('')
+        openSection('');
     } else if (path == "#/addGame") {
         openSection('selectionBlock');
-    }else if (path.split('=')[0]== "#/nameGame"){
+    } else if (path.split('=')[0] == "#/nameGame") {
         openMatchUpGame(path);
-        openSection('matchUp-game')
-        console.log(1);
-    }else {
-        document.querySelector(".main")!.innerHTML = `<h1>404</h1>`;
+        openSection('matchUp-game');
+    }
+    else if (path == '#/addGame/matchUp-form') {
+        if(!document.querySelector('.matchUp-form')){
+            createBaseMathUp();
+        }
+        openSection('matchUp-form');
+    } else {
+        openSection('erore-block')
     }
 
     document.querySelectorAll('[href^="/"]').forEach(el =>
