@@ -39,6 +39,6 @@ function createCellListener(url: string, element: HTMLElement) {
       openSection('matchUp-game');
       openMatchUpGame(url);
     }
-    window.history.pushState({ path }, path, path + url);
+    window.history.pushState({ path }, path, path +'#/' + url);
   })
 }
