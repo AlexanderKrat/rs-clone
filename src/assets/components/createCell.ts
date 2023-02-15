@@ -32,7 +32,7 @@ function createCellListener(url: string, element: HTMLElement) {
     const target = e.target
     if (!(target instanceof HTMLElement)) { return };
     if (target.classList.contains('game-container__share')) { return }
-    const path  = new URL(window.location.href).href;
+    const path  = new URL(window.location.href).origin;
 
     if (!(currentTarget instanceof HTMLElement)) { return };
     if (currentTarget.classList.contains('Match%20Up')) {
