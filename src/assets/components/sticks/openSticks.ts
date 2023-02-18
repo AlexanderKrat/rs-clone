@@ -19,7 +19,6 @@ function openSticks() {
 
 
     const newSticks = new Sticks(array, title)
-    console.log(newSticks)
     newSticks.create();
     newSticks.check();
     newSticks.randomizer();

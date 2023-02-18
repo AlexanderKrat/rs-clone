@@ -2,6 +2,7 @@ import createObgectFromString from "./createObgectFromString";
 import openMatchUpGame from "./matchUp/openMatchUpGame";
 import openSection from "./openSection";
 import shareGame from "./shareGame";
+import openSticks from "./sticks/openSticks";
 
 function createCell(URL: string) {
   const obj = createObgectFromString(URL);
@@ -38,7 +39,11 @@ function createCellListener(url: string, element: HTMLElement) {
     if (currentTarget.classList.contains('Match%20Up')) {
       openSection('matchUp-game');
       openMatchUpGame(url);
-    }
+    } 
     window.history.pushState({ path }, path, path +'#/' + url);
+    if(currentTarget.classList.contains('Sticks')) {
+      openSticks()
+      openSection('sticks-place')
+    }
   })
 }
