@@ -30,6 +30,10 @@ export class Sticks {
     }
     create() {
         const main = document.querySelector('.main') as HTMLElement;
+        const checkPlace = document.querySelector('.sticks-place')
+        if (checkPlace) {
+          checkPlace.remove()
+        }
         const sticksGame = document.createElement('div')
         sticksGame.classList.add('sticks-place')
         main.appendChild(sticksGame)

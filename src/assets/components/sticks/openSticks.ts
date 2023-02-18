@@ -1,4 +1,3 @@
-import openSection from "../openSection";
 import { Sticks } from "./paper";
 
 function openSticks() {
