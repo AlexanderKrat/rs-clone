@@ -8,7 +8,7 @@ function createCell(URL: string) {
   const obj = createObgectFromString(URL);
   const main = document.querySelector('.main__container');
   const root = document.createElement('div');
-  
+
   createCellListener(URL, root)
   root.classList.add('game-container')
   root.classList.add(obj.title)
@@ -16,7 +16,7 @@ function createCell(URL: string) {
     <div class="game-container__image"></div>
     <div class="game-container__block">
       <div class="game-container__title">${obj.title.replace(/%20/g, ' ')}</div>
-      <div class="game-container__description">${obj.title.replace(/%20/g, ' ')}</div>
+      <div class="game-container__description">${obj.nameGame.replace(/%20/g, ' ')}</div>
     </div>
     `;
   let share = document.createElement('div');

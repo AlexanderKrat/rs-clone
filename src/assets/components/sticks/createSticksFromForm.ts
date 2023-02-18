@@ -1,6 +1,7 @@
 import { Sticks } from './paper'
 import openSection from '../openSection'
 import createUrlSticks from './addUrlSticks'
+import createCell from '../createCell'
 
 function createSticksFromForm() {
     const arr: string[][] = []
@@ -23,8 +24,10 @@ function createSticksFromForm() {
     newSticks.check();
     newSticks.randomizer();
 
-    openSection('sticks-place')
     createUrlSticks(arr, title.value)
+    openSection('sticks-place')
+    // console.log(window.location.hash.split('/')[1])
+    createCell(window.location.hash.split('/')[1])
 }
 
 export default createSticksFromForm
