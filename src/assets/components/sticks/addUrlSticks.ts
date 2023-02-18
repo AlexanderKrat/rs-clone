@@ -1,11 +1,11 @@
+import criateURL from "../criateURL"
+
 function createUrlSticks(arr: string[][], title: string) {
-    const array: string[] = []
-    arr.forEach(element => {
-        const elem = element.join('%2C')
-        array.push(elem)
-    })
-    const finalArray = array.join('%')
-    const path = `nameGame=sticks&title=${encodeURI(title)}&arr=${finalArray}`
-    window.history.pushState({}, '', `/#/${path}`)
+    const dataGame = {
+        nameGame: 'sticks',
+        title: title,
+        arr: arr
+    }
+    window.history.pushState({}, '', `/#/${criateURL(dataGame)}`)
 }
 export default createUrlSticks

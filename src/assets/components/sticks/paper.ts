@@ -31,6 +31,7 @@ export class Sticks {
         const main = document.querySelector('.main') as HTMLElement;
         const sticksGame = document.createElement('div')
         sticksGame.classList.add('sticks-place')
+       
         main.appendChild(sticksGame)
         this.verbs?.forEach(elem => {
             const div = document.createElement('div')
@@ -110,6 +111,12 @@ export class Sticks {
         const shuffledArray = arraOfSticks.sort((a, b) => 0.5 - Math.random());
         const sticksGame = document.querySelector('.sticks-place') as HTMLElement;
         sticksGame.innerHTML = '';
+        const tit = document.createElement('div')
+        tit.classList.add('sticks-title')
+        if (this.title) {
+          tit.innerHTML = this.title;
+          sticksGame.appendChild(tit)
+        }
         const statsSticks = document.createElement('div')
         const startedTime = document.createElement('div')
         const countClicks = document.createElement('div')
