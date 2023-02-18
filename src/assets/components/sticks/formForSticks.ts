@@ -6,7 +6,8 @@ function formForSticks () {
     if (!document.querySelector('.sticks-form')) {
         const divForm = document.createElement('div')
         divForm.classList.add('sticks-form')
-        const form = document.createElement('div')
+        const form = document.createElement('form')
+        form.setAttribute('onSubmit', 'return false')
         form.classList.add('sticks-form-main')
         const input = document.createElement('input')
         input.type = 'text'
@@ -34,7 +35,7 @@ function formForSticks () {
         subButton.innerHTML = 'Submit'
         const spanButton = document.createElement('div')
         spanButton.classList.add('stick-form-buttons')
-        divForm.appendChild(spanButton)
+        form.prepend(spanButton)
         spanButton.appendChild(addButton)
         spanButton.appendChild(subButton)
         addButton.classList.add('sticks-form-button')
@@ -49,6 +50,7 @@ function formForSticks () {
         createLineForm()
 
         addButton.addEventListener('click', createLineForm)
+        
         subButton.addEventListener('click', createSticks)
     }
 }

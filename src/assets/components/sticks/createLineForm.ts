@@ -6,8 +6,10 @@ function createLineSticks() {
     const question = document.createElement('input');
     question.type = 'text'
     question.classList.add('input-in-form')
+    question.required = true
     const answer = document.createElement('input');
     answer.type = 'text'
+    answer.required = true
     answer.classList.add('input-in-form')
     line.classList.add('sticks-form-line')
 
@@ -18,7 +20,7 @@ function createLineSticks() {
     line.appendChild(question)
     line.appendChild(answer)
     line.appendChild(delButton)
-    form?.appendChild(line)
+    form?.prepend(line)
 
     delButton.addEventListener('click', delLine)
 
