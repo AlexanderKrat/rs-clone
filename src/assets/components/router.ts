@@ -1,6 +1,7 @@
 import createBaseMathUp from "./matchUp/createBaseMathUp";
 import openMatchUpGame from "./matchUp/openMatchUpGame";
 import openSection from "./openSection";
+import formForSticks from "./sticks/formForSticks";
 
 const render: any = (path: any) => {
     if (path == "#/" || path == "") {
@@ -16,6 +17,11 @@ const render: any = (path: any) => {
             createBaseMathUp();
         }
         openSection('matchUp-form');
+    } else if (path == '#/addGame/sticks-form') {
+        if(!document.querySelector('.sticks-form')){
+            formForSticks()
+        }
+        openSection('sticks-form');
     } else {
         openSection('erore-block')
     }
