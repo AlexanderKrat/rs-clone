@@ -1,5 +1,6 @@
 import { Sticks } from './paper'
 import openSection from '../openSection'
+import createUrlSticks from './addUrlSticks'
 
 function createSticks() {
     const inputs = document.querySelectorAll('.input-in-form')
@@ -32,6 +33,7 @@ function createSticks() {
             newSticks.randomizer();
 
             openSection('sticks-place')
+            createUrlSticks(arr, title.value)
         }
 }
 
