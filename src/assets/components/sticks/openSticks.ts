@@ -1,13 +1,28 @@
-import createObgectFromString from "../createObgectFromString";
+import openSection from "../openSection";
+import { Sticks } from "./paper";
 
-function openSticks(p: any) {
-    // const str = window.location.hash.split('/')[1]
-    // const arrStr = str.split('&')[2].split('=')[1]
-    // const array: string[][] = []
-    // const splitted = arrStr.split('%')
-    // console.log(splitted)
+function openSticks() {
+    const str = window.location.hash.split('/')[1]
+    const arrStr = str.split('&')[2].split('=')[1]
+    const array: string[][] = []
+    const splitted = arrStr.split('@')
+    splitted.forEach(el => {
+        const innerArray = el.split('|')
+        innerArray[0] = decodeURI(innerArray[0])
+        innerArray[1] = decodeURI(innerArray[1])
+        array.push(innerArray)
+        
+    })
+    const title = window.location.hash.split('/')[1].split('&')[1].split('=')[1]
+    
 
-    console.log(createObgectFromString(p))
+
+
+    const newSticks = new Sticks(array, title)
+    console.log(newSticks)
+    newSticks.create();
+    newSticks.check();
+    newSticks.randomizer();
 }
 
 export default openSticks;

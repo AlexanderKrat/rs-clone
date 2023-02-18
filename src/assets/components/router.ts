@@ -14,14 +14,9 @@ const render: any = (path: any) => {
             openMatchUpGame(path);
             openSection('matchUp-game');
         } else if (path.split('=')[1].split('&')[0] === 'sticks') {
-            openSticks(path)
-            openSection('main__container')
+            openSticks()
+            openSection('sticks-place')
         }
-        
-
-
-
-        
     }
     else if (path == '#/addGame/matchUp-form') {
         if(!document.querySelector('.matchUp-form')){
