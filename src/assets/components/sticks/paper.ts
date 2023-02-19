@@ -151,7 +151,7 @@ export class Sticks {
     let timeCount = 0;
     let minutes = 0;
     if (clicks === 1) {
-      setInterval(() => {
+      const timeSticks = setInterval(() => {
         timeCount++;
         if (timeCount < 60) {
           document.querySelector('.time-sticks')!.innerHTML = `Time: ${timeCount}`;
@@ -163,6 +163,9 @@ export class Sticks {
           } else {
             document.querySelector('.time-sticks')!.innerHTML = `Time: ${minutes}:${seconds}`;
           }
+        }
+        if (document.querySelector('.time-sticks')?.parentElement?.parentElement?.classList.contains('hidden')) {
+          clearInterval(timeSticks)
         }
       }, 1000);
     }

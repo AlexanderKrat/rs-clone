@@ -11,7 +11,7 @@ function createCell(URL: string) {
 
   createCellListener(URL, root)
   root.classList.add('game-container')
-  root.classList.add(obj.title)
+  root.classList.add(obj.title.replace(/ /g, '_'))
   root.innerHTML = `
     <div class="game-container__image"></div>
     <div class="game-container__block">
