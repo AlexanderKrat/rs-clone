@@ -14,7 +14,7 @@ function createLineSticks() {
   line.classList.add('sticks-form-line');
 
   const delButton = document.createElement('button');
-  delButton.innerHTML = 'Del';
+  delButton.classList.add('matchUp-form__input-delete')
 
   line.appendChild(question);
   line.appendChild(answer);
