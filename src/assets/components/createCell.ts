@@ -40,6 +40,7 @@ function createCellListener(url: string, element: HTMLElement) {
       openSection('matchUp-game');
       openMatchUpGame(url);
     } 
+    console.log(path +'#/' + url);
     window.history.pushState({ path }, path, path +'#/' + url);
     if(currentTarget.classList.contains('Sticks')) {
       openSticks()
