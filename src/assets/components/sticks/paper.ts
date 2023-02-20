@@ -125,7 +125,7 @@ export class Sticks {
     const tit = document.createElement('div');
     tit.classList.add('sticks-title');
     if (this.title) {
-      tit.innerHTML = this.title;
+      tit.innerHTML = this.title.replace(/%20/g, ' ');
       sticksGame.appendChild(tit);
     }
     const statsSticks = document.createElement('div');

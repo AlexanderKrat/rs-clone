@@ -11,7 +11,7 @@ function createCell(URL: string) {
 
   createCellListener(URL, root)
   root.classList.add('game-container')
-  root.classList.add(obj.title.replace(/ /g, '_'))
+  root.classList.add(obj.title.replace(/ /g, '%20'))
   root.innerHTML = `
     <div class="game-container__image"></div>
     <div class="game-container__block">
@@ -35,14 +35,15 @@ function createCellListener(url: string, element: HTMLElement) {
     if (target.classList.contains('game-container__share')) { return }
     const path  = new URL(window.location.href).origin;
 
+    const gameToOpen = url.split('=')[1].split('&')[0];
     if (!(currentTarget instanceof HTMLElement)) { return };
-    if (currentTarget.classList.contains('Match%20Up')) {
+    if (gameToOpen === 'machUp') {
       openSection('matchUp-game');
       openMatchUpGame(url);
     } 
     console.log(path +'#/' + url);
     window.history.pushState({ path }, path, path +'#/' + url);
-    if(currentTarget.classList.contains('Sticks')) {
+    if(gameToOpen === 'sticks') {
       openSticks()
       openSection('sticks-place')
     }
