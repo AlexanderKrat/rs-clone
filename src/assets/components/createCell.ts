@@ -35,15 +35,14 @@ function createCellListener(url: string, element: HTMLElement) {
     if (target.classList.contains('game-container__share')) { return }
     const path  = new URL(window.location.href).origin;
 
-    const classPath = currentTarget as HTMLElement
-    const classToOpen = classPath.className.split(' ')[1].split('%')[0]
+    const gameToOpen = url.split('=')[1].split('&')[0];
     if (!(currentTarget instanceof HTMLElement)) { return };
-    if (classToOpen === 'Match') {
+    if (gameToOpen === 'machUp') {
       openSection('matchUp-game');
       openMatchUpGame(url);
     } 
     window.history.pushState({ path }, path, path +'#/' + url);
-    if(classToOpen === 'Sticks') {
+    if(gameToOpen === 'sticks') {
       openSticks()
       openSection('sticks-place')
     }
