@@ -13,8 +13,18 @@ window.addEventListener("popstate", e => {
     render(new URL(window.location.href).hash)
 });
 render(new URL(window.location.href).hash);
-
-
-
-
-
+async function TestGet() {
+  let response = await fetch('http://localhost:3000/accounts');
+  const data = await response.json();
+  const NameFromInput= 'ExampleName2'; 
+  const PasswordFromInput= 'ExamplePassword2';
+  data.forEach((account: {[x: string]: string}) => {
+    if(account['Name'] === NameFromInput && account['Password'] === PasswordFromInput){
+      console.log(
+      account['MatchUpData'],
+      account[]
+      );
+    }
+})
+}
+TestGet()
