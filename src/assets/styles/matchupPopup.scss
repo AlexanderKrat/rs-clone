@@ -1,0 +1,21 @@
+.matchup-popup {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+
+    &__wrapper {
+        margin: 0 auto;
+        width: 300px;
+        background-color: rgba(5, 116, 116, 0.918);
+        border-radius: 5px;
+        border: 2px solid white;
+        padding: 20px 5px;
+    }
+
+    &__title {
+        font-size: 24px;
+    }
+}
