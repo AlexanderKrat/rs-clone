@@ -88,6 +88,7 @@
     color: white;
 }
 .sticks-form-line {
+    margin-top: 5px;
     display: flex;
     position: relative;
     justify-content: center;
@@ -103,4 +104,8 @@
 }
 .sticks-form-button {
     font-size: 26px;
+}
+.sticks-title {
+    color:white;
+    font-size: 50px;
 }
