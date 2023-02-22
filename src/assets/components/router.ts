@@ -1,6 +1,8 @@
 import createBaseMathUp from "./matchUp/createBaseMathUp";
 import openMatchUpGame from "./matchUp/openMatchUpGame";
 import openSection from "./openSection";
+import createPopupLogin from "./popupLogin/createPopupLogin";
+import createPopupRegister from "./popupLogin/createPopupRegister";
 import formForSticks from "./sticks/formForSticks";
 import openSticks from "./sticks/openSticks";
 
@@ -31,7 +33,7 @@ const render = (path: string) => {
     } else {
         openSection('erore-block')
     }
-
+    
 };
 window.addEventListener("popstate", () => {
     render(new URL(window.location.href).hash)

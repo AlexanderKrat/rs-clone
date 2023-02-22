@@ -4,7 +4,6 @@ import AccountData1 from "./data/AccountData";
 const interactionAccounts = {
     rootLinck: 'http://localhost:3000',
 
-
     getAcount: async (nameFromInput: string, passwordFromInput: string) => {
         const response = await fetch(`${interactionAccounts.rootLinck}/accounts`)
         const data = await response.json();
