@@ -74,7 +74,7 @@ const interactionAccounts = {
         const response = await fetch(`${interactionAccounts.rootLinck}/accountsList`)
         return await response.json()
     },
-    updateGameBlock: (async (data:object, id: number) => {
+    addGameBlock: (async (data:object, id: number) => {
         const getGameBlock = await interactionAccounts.getGameBlock(id)
         const response = await fetch(`${interactionAccounts.rootLinck}/games/${id}`, {
             method: 'PUT',
@@ -85,34 +85,18 @@ const interactionAccounts = {
         });
         return await response.json()
     }),
-
-
-    // createCar: (async (data: ObjectData) => {
-    //     const response = await fetch(interactionGarage.rootLinck, {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(data),
-    //     });
-    //     return await response.json()
-    // }),
-    // deleteCar: async (id:number) => {
-    //     const response = await fetch( `${interactionGarage.rootLinck}/${id}`,{
-    //         method: 'DELETE',
-    //        })
-    //     return await response.json()
-    // },
-    // updateCar: (async ( data: ObjectData, id: number) => {
-    //     const response = await fetch(`${interactionGarage.rootLinck}/${id}`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(data),
-    //     });
-    //     return await response.json()
-    // }),
-}
+    deleteItemInGameBlock: async (data:string, id:number) => {
+        const getGameBlock = await interactionAccounts.getGameBlock(id)
+        delete getGameBlock[data];
+        const response = await fetch(`${interactionAccounts.rootLinck}/games/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(getGameBlock),
+        });
+        return await response.json()
+    },
+  }
 
 export default interactionAccounts;

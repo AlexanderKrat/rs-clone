@@ -3,10 +3,7 @@ import './assets/styles/index.scss';
 import createGameSelectionBlock from './assets/components/createGameSelectionBlock';
 import render from './assets/components/router';
 import createCell from './assets/components/createCell';
-import interactionAccounts from './assets/components/interactionGarage';
-import AccountData from './assets/components/data/AccountData';
-import DataAccount from './assets/components/data/DataAccount';
-
+import interactionAccounts from './assets/components/interactionAccounts';
 
 
 const game = `nameGame=machUp&title=Match%2520Up&arr=11%2C1%2C12%2C2%2C13%2C3`
@@ -53,12 +50,16 @@ render(new URL(window.location.href).hash);
 const a: object = {
   "name1": "ExampleName",
   }
-interactionAccounts.updateGameBlock(a, 1).then((d) => {
+interactionAccounts.addGameBlock(a, 1).then((d) => {
   console.log(d);
 })
 //------
-
-
+//delete game--------
+interactionAccounts.deleteItemInGameBlock('name1', 1)
+.then((d) => {
+  console.log(d);
+})
+//------
 interactionAccounts.getGameBlock(1).then((d) => {
   console.log(d);
 })
