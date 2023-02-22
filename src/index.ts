@@ -3,6 +3,11 @@ import './assets/styles/index.scss';
 import createGameSelectionBlock from './assets/components/createGameSelectionBlock';
 import render from './assets/components/router';
 import createCell from './assets/components/createCell';
+import interactionAccounts from './assets/components/interactionGarage';
+import AccountData from './assets/components/data/AccountData';
+import DataAccount from './assets/components/data/DataAccount';
+
+
 
 const game = `nameGame=machUp&title=Match%2520Up&arr=11%2C1%2C12%2C2%2C13%2C3`
 createCell(game)
@@ -12,21 +17,48 @@ createCell(sticksGame)
 createGameSelectionBlock()
 
 window.addEventListener("popstate", e => {
-    render(new URL(window.location.href).hash)
+  render(new URL(window.location.href).hash)
 });
 render(new URL(window.location.href).hash);
-async function TestGet() {
-  let response = await fetch('http://localhost:3000/accounts');
-  const data = await response.json();
-  const NameFromInput= 'ExampleName2'; 
-  const PasswordFromInput= 'ExamplePassword2';
-  data.forEach((account: {[x: string]: string}) => {
-    if(account['Name'] === NameFromInput && account['Password'] === PasswordFromInput){
-      console.log(
-      account['MatchUpData'],
-      account[]
-      );
-    }
+
+
+// interactionAccounts.getAcount("ExampleName1", "ExamplePassword1").then((date:number) => {
+//   console.log(date)
+// });
+// interactionAccounts.getGames(1).then((date: object) => console.log(date));
+
+
+
+//create Account----------
+// const data: AccountData = {
+//   "name": "ExampleName0",
+//   "password": "ExamplePassword22",
+// }
+// interactionAccounts.createAcount(data).then((date: DataAccount) => {
+//   if (date) {
+//     interactionAccounts.createGameBlock(date.id)
+//   }
+//   console.log(date ? date : 'error')
+// });
+
+
+//----------------
+
+// interactionAccounts.getAccountsList().then((d) => {
+//   console.log(d);
+// })
+
+
+//add game---------
+const a: object = {
+  "name1": "ExampleName",
+  }
+interactionAccounts.updateGameBlock(a, 1).then((d) => {
+  console.log(d);
 })
-}
-TestGet()
+//------
+
+
+interactionAccounts.getGameBlock(1).then((d) => {
+  console.log(d);
+})
