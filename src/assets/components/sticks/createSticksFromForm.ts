@@ -2,6 +2,7 @@ import { Sticks } from './paper';
 import openSection from '../openSection';
 import createUrlSticks from './addUrlSticks';
 import createCell from '../createCell';
+import interactionAccounts from '../interactionAccounts';
 
 function createSticksFromForm() {
   const arr: string[][] = [];
@@ -26,8 +27,14 @@ function createSticksFromForm() {
 
   createUrlSticks(arr, title.value);
   openSection('sticks-place');
-  // console.log(window.location.hash.split('/')[1])
+  
+  
   createCell(window.location.hash.split('/')[1]);
+  const id = localStorage.getItem('id');
+
+  if(id){
+    interactionAccounts.addGameBlock(`${window.location.hash.split('/')[1]}`, +id)
+  }
 }
 
 export default createSticksFromForm;
