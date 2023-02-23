@@ -59,8 +59,8 @@ const interactionAccounts = {
             },
             body: JSON.stringify({
                 'id': id,
-                'game-1': 'nameGame=machUp&title=Match%2520Up&arr=11%2C1%2C12%2C2%2C13%2C3',
-                'game-2': 'nameGame=sticks&title=Sticks&arr=Look%20forward%20to|C%20нетерпением%20ждать%20чего-то@Carry%20on|Продолжать%20заниматься%20чем-то@Pass%20out|Терять%20сознание@Run%20out|Закончиться@Stand%20by|Приготовиться@Work%20out|Тренероваться@Watch%20out|Быть%20начеку@Give%20up|Сдаваться@Catch%20up|Наверстать@Pick%20out|Выбирать',
+                'item-1': 'nameGame=machUp%2520Back&title=Match%2520Up&arr=11%2C1%2C12%2C2%2C13%2C3',
+                'item-2': 'nameGame=sticks%2520Back&title=Sticks&arr=Look%20forward%20to|C%20нетерпением%20ждать%20чего-то@Carry%20on|Продолжать%20заниматься%20чем-то@Pass%20out|Терять%20сознание@Run%20out|Закончиться@Stand%20by|Приготовиться@Work%20out|Тренероваться@Watch%20out|Быть%20начеку@Give%20up|Сдаваться@Catch%20up|Наверстать@Pick%20out|Выбирать',
             }),
         });
         return await response.json()
@@ -73,14 +73,19 @@ const interactionAccounts = {
         const response = await fetch(`${interactionAccounts.rootLinck}/accountsList`)
         return await response.json()
     },
-    addGameBlock: (async (data:object, id: number) => {
+    addGameBlock: (async (game:string, id: number) => {
         const getGameBlock = await interactionAccounts.getGameBlock(id)
+        
+        const getLastIndex = await interactionAccounts.getGameBlock(id).then((object)=>{
+            return +Object.keys(object).reverse()[0].split('-')[1] + 1;
+        })
+        
         const response = await fetch(`${interactionAccounts.rootLinck}/games/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({...getGameBlock, ...data}),
+            body: JSON.stringify({...getGameBlock, ...{[`item-${getLastIndex}`] : game}}),
         });
         return await response.json()
     }),

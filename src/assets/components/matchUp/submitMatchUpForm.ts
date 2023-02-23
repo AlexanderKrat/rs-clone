@@ -1,6 +1,7 @@
 import createCell from '../createCell';
 import criateURL from '../criateURL'
 import dataGame from '../data/dataGame';
+import interactionAccounts from '../interactionAccounts';
 import openMatchUpGame from './openMatchUpGame';
 
 function submitMatchUpForm() {
@@ -38,5 +39,12 @@ function submitMatchUpForm() {
     openMatchUpGame(URL);
     matchUp?.remove();
     createCell(URL);
+    const id = localStorage.getItem('id');
+    console.log(id);
+    if(id){
+        interactionAccounts.addGameBlock(URL, +id)
+        interactionAccounts.getGameBlock(+id).then((d)=>console.log(d))
+    }
+    
 }
 export default submitMatchUpForm
