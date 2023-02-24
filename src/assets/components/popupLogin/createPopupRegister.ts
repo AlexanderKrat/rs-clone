@@ -1,10 +1,10 @@
-import openLogin from "./openLogin";
+import openLogin from './openLogin';
 
 function createPopupRegister() {
-    const main = document.querySelector('.main');
-    let popup = document.createElement('div');
-    popup.classList.add('popup-register')
-    popup.innerHTML = `
+  const main = document.querySelector('.main');
+  const popup = document.createElement('div');
+  popup.classList.add('popup-register');
+  popup.innerHTML = `
     <div class="popup__wrap">
         <div class="popup__content">
         <h3 class="popup__title">Create account</h3>
@@ -33,10 +33,9 @@ function createPopupRegister() {
         </div>
     </div>
 </div>
-    `
+    `;
 
-    main?.appendChild(popup);
-    popup?.addEventListener('click', openLogin);
-    
+  main?.appendChild(popup);
+  popup?.addEventListener('click', openLogin);
 }
-export default createPopupRegister
+export default createPopupRegister;

@@ -1,10 +1,10 @@
-import openLogin from "./openLogin";
+import openLogin from './openLogin';
 
 function createPopupLogin() {
-    const main = document.querySelector('.main');
-    let popup = document.createElement('div');
-    popup.classList.add('popup-login')
-    popup.innerHTML = `
+  const main = document.querySelector('.main');
+  const popup = document.createElement('div');
+  popup.classList.add('popup-login');
+  popup.innerHTML = `
     <div class="popup__wrap">
         <div class="popup__content">
             <h3 class="popup__title">Log in to your account</h3>
@@ -34,8 +34,8 @@ function createPopupLogin() {
             </div>
         </div>
     </div>
-    `
-    main?.appendChild(popup);
-    popup?.addEventListener('click', openLogin);
+    `;
+  main?.appendChild(popup);
+  popup?.addEventListener('click', openLogin);
 }
-export default createPopupLogin
+export default createPopupLogin;

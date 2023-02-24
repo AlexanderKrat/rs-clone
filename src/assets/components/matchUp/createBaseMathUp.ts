@@ -2,27 +2,27 @@ import createLine from './createLine';
 import submitMatchUpForm from './submitMatchUpForm';
 
 function createBaseMathUp() {
-  let blockMatchUp = document.createElement('form');
+  const blockMatchUp = document.createElement('form');
   blockMatchUp.classList.add('matchUp-form');
-  blockMatchUp.setAttribute('onSubmit', 'return false')
- 
-  let titleMatchUp = document.createElement('input');
-  titleMatchUp.value = 'Match Up'
-  titleMatchUp.classList.add('matchUp-form__title');
-  titleMatchUp.setAttribute("required", 'true');
-  blockMatchUp.appendChild(titleMatchUp)
+  blockMatchUp.setAttribute('onSubmit', 'return false');
 
-  let block = document.createElement('div');
+  const titleMatchUp = document.createElement('input');
+  titleMatchUp.value = 'Match Up';
+  titleMatchUp.classList.add('matchUp-form__title');
+  titleMatchUp.setAttribute('required', 'true');
+  blockMatchUp.appendChild(titleMatchUp);
+
+  const block = document.createElement('div');
   block.classList.add('matchUp-form__form');
 
-  let subtitle = document.createElement('span');
+  const subtitle = document.createElement('span');
   subtitle.classList.add('matchUp-form__subtitle');
 
-  let keyword = document.createElement('div');
+  const keyword = document.createElement('div');
   keyword.textContent = 'keyword';
   subtitle.appendChild(keyword);
 
-  let definitio = document.createElement('div');
+  const definitio = document.createElement('div');
   definitio.textContent = 'definitio';
   subtitle.appendChild(definitio);
 
@@ -30,17 +30,17 @@ function createBaseMathUp() {
 
   blockMatchUp.appendChild(block);
 
-  let createLineBtm = document.createElement('button');
+  const createLineBtm = document.createElement('button');
   createLineBtm.classList.add('matchUp-form__create-line');
   createLineBtm.textContent = 'add';
-  createLineBtm.setAttribute("formnovalidate", 'true');
+  createLineBtm.setAttribute('formnovalidate', 'true');
   createLineBtm.addEventListener('click', createLine);
   blockMatchUp.appendChild(createLineBtm);
 
-  let submit = document.createElement('button');
+  const submit = document.createElement('button');
   submit.classList.add('matchUp-form__submit');
   submit.textContent = 'submit';
-  submit.addEventListener('click', submitMatchUpForm)
+  submit.addEventListener('click', submitMatchUpForm);
   blockMatchUp.appendChild(submit);
 
   const main = document.querySelector('.main');
@@ -51,4 +51,4 @@ function createBaseMathUp() {
   createLine();
 }
 
-export default createBaseMathUp
+export default createBaseMathUp;
