@@ -31,9 +31,4 @@ const render = (path: string) => {
     openSection('erore-block');
   }
 };
-window.addEventListener('popstate', () => {
-  render(new URL(window.location.href).hash);
-});
-render('#/');
-
 export default render;
