@@ -43,47 +43,10 @@ window.addEventListener("popstate", e => {
 render(new URL(window.location.href).hash);
 
 checkAccaunt()
-// interactionAccounts.getAcount("ExampleName1", "ExamplePassword1").then((date:number) => {
-//   console.log(date)
-// });
-// interactionAccounts.getGames(1).then((date: object) => console.log(date));
 
-
-
-//create Account----------
-// const data: AccountData = {
-//   "name": "ExampleName0",
-//   "password": "ExamplePassword22",
+// let link = `https://kapkande.github.io/1r/index.js`
+// async function name() {
+//   const response = await fetch(link)
+//         return await response
 // }
-// interactionAccounts.createAcount(data).then((date: DataAccount) => {
-//   if (date) {
-//     interactionAccounts.createGameBlock(date.id)
-//   }
-//   console.log(date ? date : 'error')
-// });
-
-
-//----------------
-
-// interactionAccounts.getAccountsList().then((d) => {
-//   console.log(d);
-// })
-
-
-//add game---------
-// const a: object = {
-//   "name1": "ExampleName",
-//   }
-// interactionAccounts.addGameBlock(a, 1).then((d) => {
-//   console.log(d);
-// })
-// //------
-// //delete game--------
-// interactionAccounts.deleteItemInGameBlock('name1', 1)
-// .then((d) => {
-//   console.log(d);
-// })
-// //------
-// interactionAccounts.getGameBlock(1).then((d) => {
-//   console.log(d);
-// })
+// console.log(name());

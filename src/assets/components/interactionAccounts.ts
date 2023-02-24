@@ -22,6 +22,7 @@ const interactionAccounts = {
     },
     createAcount: (async (data: AccountData1) => {
         const checkAvailability = await interactionAccounts.checkAvailability(data.name);
+        console.log(checkAvailability);
         if (checkAvailability) { return };
         const response = await fetch(`${interactionAccounts.rootLinck}/accounts`, {
             method: 'POST',
