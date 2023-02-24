@@ -2,20 +2,20 @@ import createLine from './createLine';
 import submitMatchUpForm from './submitMatchUpForm';
 
 function createBaseMathUp() {
-  let blockMatchUp = document.createElement('form');
+  const blockMatchUp = document.createElement('form');
   blockMatchUp.classList.add('matchUp-form');
-  blockMatchUp.setAttribute('onSubmit', 'return false')
- 
-  let titleMatchUp = document.createElement('input');
-  titleMatchUp.value = 'Match Up'
-  titleMatchUp.classList.add('matchUp-form__title');
-  titleMatchUp.setAttribute("required", 'true');
-  blockMatchUp.appendChild(titleMatchUp)
+  blockMatchUp.setAttribute('onSubmit', 'return false');
 
-  let block = document.createElement('div');
+  const titleMatchUp = document.createElement('input');
+  titleMatchUp.value = 'Match Up';
+  titleMatchUp.classList.add('matchUp-form__title');
+  titleMatchUp.setAttribute('required', 'true');
+  blockMatchUp.appendChild(titleMatchUp);
+
+  const block = document.createElement('div');
   block.classList.add('matchUp-form__form');
 
-  let subtitle = document.createElement('span');
+  const subtitle = document.createElement('span');
   subtitle.classList.add('matchUp-form__subtitle');
 
   let keyword = document.createElement('div');
@@ -30,14 +30,14 @@ function createBaseMathUp() {
 
   blockMatchUp.appendChild(block);
 
-  let createLineBtm = document.createElement('button');
+  const createLineBtm = document.createElement('button');
   createLineBtm.classList.add('matchUp-form__create-line');
   createLineBtm.textContent = 'Add line';
   createLineBtm.setAttribute("formnovalidate", 'true');
   createLineBtm.addEventListener('click', createLine);
   blockMatchUp.appendChild(createLineBtm);
 
-  let submit = document.createElement('button');
+  const submit = document.createElement('button');
   submit.classList.add('matchUp-form__submit');
   submit.textContent = 'Submit';
   submit.addEventListener('click', submitMatchUpForm)
@@ -51,4 +51,4 @@ function createBaseMathUp() {
   createLine();
 }
 
-export default createBaseMathUp
+export default createBaseMathUp;

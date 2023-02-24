@@ -27,13 +27,12 @@ function createSticksFromForm() {
 
   createUrlSticks(arr, title.value);
   openSection('sticks-place');
-  
-  
+
   createCell(window.location.hash.split('/')[1]);
   const id = localStorage.getItem('id');
 
-  if(id){
-    interactionAccounts.addGameBlock(`${window.location.hash.split('/')[1]}`, +id)
+  if (id) {
+    interactionAccounts.addGameBlock(`${window.location.hash.split('/')[1]}`, +id);
   }
 }
 

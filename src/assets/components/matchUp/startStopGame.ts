@@ -1,28 +1,29 @@
-import submitGame from "./submitGame";
-let flag: boolean = true;
+import submitGame from './submitGame';
+
+let flag = true;
 function startStopGame(e: Event) {
-  const target = e.target;
-  if (!(target instanceof HTMLButtonElement)) { return };
+  const { target } = e;
+  if (!(target instanceof HTMLButtonElement)) { return; }
 
   if (target.classList.contains('matchUp-game__submit')) {
-    submitGame()
-    toggleBoxes()
-    setTimer()
+    submitGame();
+    toggleBoxes();
+    setTimer();
     flag = true;
-    disabledButtons()
+    disabledButtons();
   }
   if (target.classList.contains('matchUp-game__start')) {
-    toggleBoxes()
-    setTimer()
+    toggleBoxes();
+    setTimer();
     flag = false;
     swopItemsMatchUp();
-    disabledButtons()
+    disabledButtons();
   }
   if (target.classList.contains('matchUp-game__stop')) {
-    toggleBoxes()
-    setTimer()
+    toggleBoxes();
+    setTimer();
     flag = true;
-    disabledButtons()
+    disabledButtons();
   }
 }
 export default startStopGame;
@@ -30,34 +31,32 @@ export default startStopGame;
 function disabledButtons() {
   const start: HTMLInputElement | null = document.querySelector('.matchUp-game__start');
   const stop: HTMLInputElement | null = document.querySelector('.matchUp-game__stop');
-  const submit: HTMLInputElement | null = document.querySelector('.matchUp-game__submit')
+  const submit: HTMLInputElement | null = document.querySelector('.matchUp-game__submit');
   start!.disabled = Boolean(!flag);
   submit!.disabled = Boolean(flag);
   stop!.disabled = Boolean(flag);
 }
 
 function setTimer() {
-  const matchUpTime: Element | null = document.querySelector('.matchUp-game__time')
+  const matchUpTime: Element | null = document.querySelector('.matchUp-game__time');
   if (flag) {
     let sec = 0;
-    matchUpTime!.textContent = `0:00`;
+    matchUpTime!.textContent = '0:00';
     setInterval(() => {
       if (!flag) {
-        matchUpTime!.textContent = `${Math.floor(sec / 60)}:${sec % 60}`
-        sec++
+        matchUpTime!.textContent = `${Math.floor(sec / 60)}:${sec % 60}`;
+        sec++;
       } else {
         sec = 0;
-        return
       }
     }, 1000);
   }
-
 }
 
 function swopItemsMatchUp() {
-  const randomList: Number[] = [];
+  const randomList: number[] = [];
   const gameDrops = document.querySelectorAll('.matchUp-game__drop');
-  const boxes = document.querySelectorAll('.box')
+  const boxes = document.querySelectorAll('.box');
   for (let i = 0; i < gameDrops.length;) {
     const random = Math.floor(Math.random() * (gameDrops.length)) + 0;
     if (!(randomList.includes(random))) {
@@ -73,6 +72,6 @@ function swopItemsMatchUp() {
 }
 
 function toggleBoxes() {
-  const container = document.querySelector('.matchUp-game__form')
-  container?.classList.toggle('matchUp-active')
+  const container = document.querySelector('.matchUp-game__form');
+  container?.classList.toggle('matchUp-active');
 }
