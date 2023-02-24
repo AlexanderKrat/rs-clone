@@ -22,11 +22,19 @@
     height: 100%;
     align-items: center;
   }
-  .item__image{
+  .item__image-github{
     margin-right: 5px;
     height: 50px;
     width:  50px;
     background: url('../images/github.png') no-repeat top 0px left 0px;
+    background-size: 100%;
+    border-radius: 5%;
+  }
+  .item__image-rsschool{
+    margin-right: 5px;
+    height: 67.5px;
+    width:  187px;
+    background: url('../images/rs-school.png') no-repeat top 0px left 0px;
     background-size: 100%;
     border-radius: 5%;
   }
