@@ -44,9 +44,26 @@ render(new URL(window.location.href).hash);
 
 checkAccaunt()
 
-// let link = `https://kapkande.github.io/1r/index.js`
+ 
+
+// let link = `https://zany-cyan-chameleon-sock.cyclic.app/games`
 // async function name() {
-//   const response = await fetch(link)
-//         return await response
+  
+//   const response = await fetch(`${link}/${1}`, {
+//     method: 'PUT',
+//     headers: {
+//         'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({'asd':'asd'}),
+// });
+  
+//   return await response.json()
 // }
-// console.log(name());
+// name().then(d=>{console.log(d);})
+
+// async function nam1e() {
+//  const response = await fetch(link)
+  
+//   return await response.json()
+// }
+// nam1e().then(d=>console.log(d))

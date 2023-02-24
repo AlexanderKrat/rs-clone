@@ -2,7 +2,7 @@ import AccountData from "../data/AccountData";
 import DataAccount from "../data/DataAccount";
 import interactionAccounts from "../interactionAccounts";
 
-function submitNewAccount() {
+async function submitNewAccount() {
     const email: HTMLInputElement | null = document.querySelector('#register-popup__email');
     const password: HTMLInputElement | null = document.querySelector('#register-popup__password');
     if (email?.value?.trim() == '' || password?.value?.trim() == '') { return }
@@ -10,13 +10,16 @@ function submitNewAccount() {
         "name": `${email?.value}`,
         "password": `${password?.value}`,
     }
-    interactionAccounts.createAcount(data).then((date: DataAccount) => {
+    await interactionAccounts.createAcount(data).then((date: DataAccount) => {
         if (date) {
-            interactionAccounts.createGameBlock(date.id)
-            localStorage.setItem('id', String(date.id));
-            location.reload()
+            (async () => {
+                console.log(2);
+                await interactionAccounts.createGameBlock(date.id).then(() => {
+                    localStorage.setItem('id', String(date.id));
+                })
+            })().then(() => { location.reload() })
+            console.log(date ? date : 'error')
         }
-        console.log(date ? date : 'error')
-    })   
+    })
 }
 export default submitNewAccount

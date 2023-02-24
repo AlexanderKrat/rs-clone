@@ -2,7 +2,7 @@ import DataAccount from "./data/DataAccount";
 import AccountData1 from "./data/AccountData";
 
 const interactionAccounts = {
-    rootLinck: 'http://localhost:3000',
+    rootLinck: 'https://zany-cyan-chameleon-sock.cyclic.app',
 
     getAcount: async (nameFromInput: string, passwordFromInput: string) => {
         const response = await fetch(`${interactionAccounts.rootLinck}/accounts`)
@@ -22,7 +22,6 @@ const interactionAccounts = {
     },
     createAcount: (async (data: AccountData1) => {
         const checkAvailability = await interactionAccounts.checkAvailability(data.name);
-        console.log(checkAvailability);
         if (checkAvailability) { return };
         const response = await fetch(`${interactionAccounts.rootLinck}/accounts`, {
             method: 'POST',
@@ -53,6 +52,7 @@ const interactionAccounts = {
         return false;
     },
     createGameBlock: (async (id: number) => {
+        console.log(1);
         const response = await fetch(`${interactionAccounts.rootLinck}/games`, {
             method: 'POST',
             headers: {
