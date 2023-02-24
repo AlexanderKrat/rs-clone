@@ -7,6 +7,7 @@
     &__title {
         width: 100%;
         text-align: center;
+        font-size: 25px;
     }
     &__item,
     &__subtitle {
@@ -16,7 +17,7 @@
         margin-top: 5px;
         div {
             text-align: center;
-            font-size: 18px;
+            font-size: 25px;
         }
     }
     &__subtitle {
@@ -42,9 +43,8 @@
     &__input-keyword,
     &__title {
         height: 24px;
-        width: 200px;
+        width: 900px;
         font-family: inherit;
-        font-size: 100%;
         line-height: 1.15;
         margin: 0;
         padding: 1px 2px;
@@ -59,6 +59,21 @@
     }
     &__subtitle {
         color: white;
+    }
+    &__create-line,
+    &__submit {
+        font-size: 25px;
+        position: relative;
+        margin-top: 30px;
+    }
+    &__create-line {
+        left: 20%;
+    }
+    &__submit {
+        left: 55%
+    }
+    &__form {
+        margin-top: 30px;
     }
 }
 
