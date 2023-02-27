@@ -10,8 +10,8 @@ function createGameSelectionBlock() {
         <div class="selectionBlock__item maatchUp-button">
             <div class="selectionBlock__subtitle">Maatch Up</div>
         </div>
-        <div class="selectionBlock__item wordMagnets-button">
-            <div class="selectionBlock__subtitle">Word Magnets</div>
+        <div class="selectionBlock__item ReplaceWords-button">
+            <div class="selectionBlock__subtitle">Replace Words</div>
         </div>
         <div class="selectionBlock__item sticks-button">
             <div class="selectionBlock__subtitle">Sticks</div>
