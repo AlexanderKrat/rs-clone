@@ -6,6 +6,7 @@ import openSticks from './sticks/openSticks';
 
 const render = (path: string) => {
   if (path === '#/' || path === '') {
+    window.history.pushState({ path }, path, `#/`);
     openSection('');
   } else if (path === '#/addGame') {
     openSection('selectionBlock');
