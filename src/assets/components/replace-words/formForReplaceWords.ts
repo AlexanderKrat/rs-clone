@@ -1,7 +1,8 @@
-import createLineForm from "./createLineForm";
-import createReplaceWords from "./createObjectSticks";
+import createLineForm from './createLineForm';
+import createReplaceWords from './createObjectSticks';
+
 function formForReplaceWords() {
-  if (!document.querySelector('.ReplaceWords-form')){
+  if (!document.querySelector('.ReplaceWords-form')) {
     const main = document.querySelector('.main');
     const divForm = document.createElement('div');
     divForm.classList.add('ReplaceWords-form');
@@ -45,5 +46,5 @@ function formForReplaceWords() {
 
     subButton.addEventListener('click', createReplaceWords);
   }
-  }
-export default formForReplaceWords
+}
+export default formForReplaceWords;

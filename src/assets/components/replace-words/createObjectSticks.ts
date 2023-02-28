@@ -1,4 +1,5 @@
-import createReplaceWordsFromForm from "./createReplaceWordsFromForm";
+import createReplaceWordsFromForm from './createReplaceWordsFromForm';
+
 function createReplaceWords() {
   const inputs = document.querySelectorAll('.input-in-form');
   let readValues = 0;
@@ -12,4 +13,4 @@ function createReplaceWords() {
     createReplaceWordsFromForm();
   }
 }
-export default createReplaceWords
+export default createReplaceWords;

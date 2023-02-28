@@ -1,6 +1,6 @@
+// import deleteLine from './deleteLine';
 
-import deleteLine from "./deleteLine";
-function createLineForm(){
+function createLineForm() {
   const form = document.querySelector('.ReplaceWords-form-main');
   const line = document.createElement('div');
   const sentence = document.createElement('input');
@@ -10,11 +10,11 @@ function createLineForm(){
   sentence.pattern = '(\[A-Za-z]{1,}\\s\[A-Za-z]\{1,})+';
   line.classList.add('sticks-form-line');
 
-  const delButton = document.createElement('button');
-  delButton.classList.add('matchUp-form__input-delete');
+  // const delButton = document.createElement('button');
+  // delButton.classList.add('matchUp-form__input-delete');
   line.appendChild(sentence);
-  line.appendChild(delButton);
+  // line.appendChild(delButton);
   form?.prepend(line);
-  delButton.addEventListener('click', deleteLine);
+  // delButton.addEventListener('click', deleteLine);
 }
-export default createLineForm
+export default createLineForm;
