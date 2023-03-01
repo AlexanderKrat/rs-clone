@@ -10,7 +10,7 @@ async function checkAccaunt() {
     login?.classList.add('login');
     login?.classList.remove('signOut');
     LoginText!.textContent = 'login';
-    loginName!.textContent = '';
+    loginName!.textContent = 'login';
     return;
   }
   interactionAccounts.getName(id).then((d)=>{loginName!.textContent = `${d}`})
