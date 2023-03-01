@@ -22,15 +22,26 @@
     transition: all 0.5s;
 }
 
-.login-name,
+.login-name {
+    width: 154px;
+}
+
 .Login-text {
     width: 154px;
-    transition: all 0.5s;
+    display: none;
 }
-.login:hover .login-name, .signOut:hover .login-name{
+
+.login:hover .login-name,
+.signOut:hover .login-name {
     width: 16px;
-    opacity: 0;
+    display: none;
 }
+
+.login:hover .Login-text,
+.signOut:hover .Login-text {
+    display: block;
+}
+
 .popup-login,
 .popup-register {
     width: 100%;
